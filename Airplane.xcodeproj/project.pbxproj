@@ -9,21 +9,29 @@
 /* Begin PBXBuildFile section */
 		0799BAF6247979C900ED8B5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0799BAF5247979C900ED8B5A /* AppDelegate.swift */; };
 		0799BAF8247979C900ED8B5A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0799BAF7247979C900ED8B5A /* SceneDelegate.swift */; };
-		0799BAFA247979C900ED8B5A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0799BAF9247979C900ED8B5A /* ViewController.swift */; };
+		0799BAFA247979C900ED8B5A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0799BAF9247979C900ED8B5A /* HomeViewController.swift */; };
 		0799BAFD247979C900ED8B5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0799BAFB247979C900ED8B5A /* Main.storyboard */; };
 		0799BAFF247979CA00ED8B5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0799BAFE247979CA00ED8B5A /* Assets.xcassets */; };
 		0799BB02247979CA00ED8B5A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0799BB00247979CA00ED8B5A /* LaunchScreen.storyboard */; };
+		0799BB0A24797C7E00ED8B5A /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0799BB0924797C7E00ED8B5A /* HomePresenter.swift */; };
+		0799BB0C24797C9800ED8B5A /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0799BB0B24797C9800ED8B5A /* HomeInteractor.swift */; };
+		0799BB0E24797CBD00ED8B5A /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0799BB0D24797CBD00ED8B5A /* HomeRouter.swift */; };
+		0799BB1124797CEF00ED8B5A /* HomeAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0799BB1024797CEF00ED8B5A /* HomeAssembly.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0799BAF2247979C900ED8B5A /* Airplane.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Airplane.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0799BAF5247979C900ED8B5A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0799BAF7247979C900ED8B5A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0799BAF9247979C900ED8B5A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0799BAF9247979C900ED8B5A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0799BAFC247979C900ED8B5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0799BAFE247979CA00ED8B5A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0799BB01247979CA00ED8B5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0799BB03247979CA00ED8B5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0799BB0924797C7E00ED8B5A /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		0799BB0B24797C9800ED8B5A /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		0799BB0D24797CBD00ED8B5A /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		0799BB1024797CEF00ED8B5A /* HomeAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAssembly.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +66,15 @@
 			children = (
 				0799BAF5247979C900ED8B5A /* AppDelegate.swift */,
 				0799BAF7247979C900ED8B5A /* SceneDelegate.swift */,
-				0799BAF9247979C900ED8B5A /* ViewController.swift */,
+				0799BAF9247979C900ED8B5A /* HomeViewController.swift */,
 				0799BAFB247979C900ED8B5A /* Main.storyboard */,
 				0799BAFE247979CA00ED8B5A /* Assets.xcassets */,
 				0799BB00247979CA00ED8B5A /* LaunchScreen.storyboard */,
 				0799BB03247979CA00ED8B5A /* Info.plist */,
+				0799BB0924797C7E00ED8B5A /* HomePresenter.swift */,
+				0799BB1024797CEF00ED8B5A /* HomeAssembly.swift */,
+				0799BB0D24797CBD00ED8B5A /* HomeRouter.swift */,
+				0799BB0B24797C9800ED8B5A /* HomeInteractor.swift */,
 			);
 			path = Airplane;
 			sourceTree = "<group>";
@@ -138,9 +150,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0799BAFA247979C900ED8B5A /* ViewController.swift in Sources */,
+				0799BAFA247979C900ED8B5A /* HomeViewController.swift in Sources */,
+				0799BB0E24797CBD00ED8B5A /* HomeRouter.swift in Sources */,
 				0799BAF6247979C900ED8B5A /* AppDelegate.swift in Sources */,
 				0799BAF8247979C900ED8B5A /* SceneDelegate.swift in Sources */,
+				0799BB0C24797C9800ED8B5A /* HomeInteractor.swift in Sources */,
+				0799BB0A24797C7E00ED8B5A /* HomePresenter.swift in Sources */,
+				0799BB1124797CEF00ED8B5A /* HomeAssembly.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
