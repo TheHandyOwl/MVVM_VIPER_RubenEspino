@@ -66,15 +66,15 @@
 			children = (
 				0799BAF5247979C900ED8B5A /* AppDelegate.swift */,
 				0799BAF7247979C900ED8B5A /* SceneDelegate.swift */,
-				0799BAF9247979C900ED8B5A /* HomeViewController.swift */,
 				0799BAFB247979C900ED8B5A /* Main.storyboard */,
 				0799BAFE247979CA00ED8B5A /* Assets.xcassets */,
 				0799BB00247979CA00ED8B5A /* LaunchScreen.storyboard */,
 				0799BB03247979CA00ED8B5A /* Info.plist */,
-				0799BB0924797C7E00ED8B5A /* HomePresenter.swift */,
 				0799BB1024797CEF00ED8B5A /* HomeAssembly.swift */,
-				0799BB0D24797CBD00ED8B5A /* HomeRouter.swift */,
 				0799BB0B24797C9800ED8B5A /* HomeInteractor.swift */,
+				0799BB0924797C7E00ED8B5A /* HomePresenter.swift */,
+				0799BB0D24797CBD00ED8B5A /* HomeRouter.swift */,
+				0799BAF9247979C900ED8B5A /* HomeViewController.swift */,
 			);
 			path = Airplane;
 			sourceTree = "<group>";
