@@ -21,6 +21,7 @@
 		0799BB0E24797CBD00ED8B5A /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0799BB0D24797CBD00ED8B5A /* HomeRouter.swift */; };
 		0799BB1124797CEF00ED8B5A /* HomeAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0799BB1024797CEF00ED8B5A /* HomeAssembly.swift */; };
 		0799BB15247999CA00ED8B5A /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0799BB14247999CA00ED8B5A /* Model.swift */; };
+		07B22616247B1958006FB68D /* NavigationBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B22615247B1958006FB68D /* NavigationBuilder.swift */; };
 		532BBF313A244199F618E6C8 /* Pods_Airplane.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 716EAC4A75C5B30A1CE36AC1 /* Pods_Airplane.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +43,7 @@
 		0799BB0D24797CBD00ED8B5A /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		0799BB1024797CEF00ED8B5A /* HomeAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAssembly.swift; sourceTree = "<group>"; };
 		0799BB14247999CA00ED8B5A /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		07B22615247B1958006FB68D /* NavigationBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBuilder.swift; sourceTree = "<group>"; };
 		716EAC4A75C5B30A1CE36AC1 /* Pods_Airplane.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Airplane.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C480B97EA252965F8553E87E /* Pods-Airplane.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Airplane.debug.xcconfig"; path = "Target Support Files/Pods-Airplane/Pods-Airplane.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,6 +103,7 @@
 				0799BB13247999A400ED8B5A /* Entity */,
 				0799BB122479999600ED8B5A /* Home */,
 				0720630F247AC5C700B3DD7D /* Cell */,
+				07B22614247B192D006FB68D /* Navigation */,
 				07206314247AD77B00B3DD7D /* Utils */,
 				0799BAFB247979C900ED8B5A /* Main.storyboard */,
 				0799BAFE247979CA00ED8B5A /* Assets.xcassets */,
@@ -128,6 +131,14 @@
 				0799BB14247999CA00ED8B5A /* Model.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		07B22614247B192D006FB68D /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				07B22615247B1958006FB68D /* NavigationBuilder.swift */,
+			);
+			path = Navigation;
 			sourceTree = "<group>";
 		};
 		121DC4F1875267A7C836F41C /* Frameworks */ = {
@@ -266,6 +277,7 @@
 				0799BB15247999CA00ED8B5A /* Model.swift in Sources */,
 				0799BAFA247979C900ED8B5A /* HomeViewController.swift in Sources */,
 				07206316247AD79900B3DD7D /* ExtensionViewCell.swift in Sources */,
+				07B22616247B1958006FB68D /* NavigationBuilder.swift in Sources */,
 				0799BB0E24797CBD00ED8B5A /* HomeRouter.swift in Sources */,
 				0799BAF6247979C900ED8B5A /* AppDelegate.swift in Sources */,
 				0799BAF8247979C900ED8B5A /* SceneDelegate.swift in Sources */,

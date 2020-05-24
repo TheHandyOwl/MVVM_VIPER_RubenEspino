@@ -24,7 +24,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window?.windowScene = windowScene
         
-        let initialViewController = HomeAssembly.build()
+        //let initialViewController = HomeAssembly.build()
+        let initialViewController = HomeAssembly.buildNavigation(usingNavigationFactory: NavigationBuilder.build)
         
         window?.rootViewController = initialViewController
         window?.makeKeyAndVisible()
