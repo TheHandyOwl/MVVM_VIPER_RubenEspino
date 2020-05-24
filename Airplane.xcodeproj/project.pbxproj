@@ -17,6 +17,8 @@
 		0799BB0C24797C9800ED8B5A /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0799BB0B24797C9800ED8B5A /* HomeInteractor.swift */; };
 		0799BB0E24797CBD00ED8B5A /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0799BB0D24797CBD00ED8B5A /* HomeRouter.swift */; };
 		0799BB1124797CEF00ED8B5A /* HomeAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0799BB1024797CEF00ED8B5A /* HomeAssembly.swift */; };
+		0799BB15247999CA00ED8B5A /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0799BB14247999CA00ED8B5A /* Model.swift */; };
+		B151E2F68B3003693F142DE2 /* Pods_Airplane.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BF93FE345624C6B3EBB4F91 /* Pods_Airplane.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,10 @@
 		0799BB0B24797C9800ED8B5A /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		0799BB0D24797CBD00ED8B5A /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		0799BB1024797CEF00ED8B5A /* HomeAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAssembly.swift; sourceTree = "<group>"; };
+		0799BB14247999CA00ED8B5A /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		1BF93FE345624C6B3EBB4F91 /* Pods_Airplane.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Airplane.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2DBD74FA94307093ADC0A1CA /* Pods-Airplane.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Airplane.release.xcconfig"; path = "Target Support Files/Pods-Airplane/Pods-Airplane.release.xcconfig"; sourceTree = "<group>"; };
+		8A2E059B698381E4B5AB3196 /* Pods-Airplane.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Airplane.debug.xcconfig"; path = "Target Support Files/Pods-Airplane/Pods-Airplane.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B151E2F68B3003693F142DE2 /* Pods_Airplane.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +57,8 @@
 			children = (
 				0799BAF4247979C900ED8B5A /* Airplane */,
 				0799BAF3247979C900ED8B5A /* Products */,
+				644DCB17EEBB6BBBD427F3A6 /* Pods */,
+				5F5E8038E437BC3A13937B75 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,17 +75,52 @@
 			children = (
 				0799BAF5247979C900ED8B5A /* AppDelegate.swift */,
 				0799BAF7247979C900ED8B5A /* SceneDelegate.swift */,
+				0799BB13247999A400ED8B5A /* Entity */,
+				0799BB122479999600ED8B5A /* Home */,
 				0799BAFB247979C900ED8B5A /* Main.storyboard */,
 				0799BAFE247979CA00ED8B5A /* Assets.xcassets */,
 				0799BB00247979CA00ED8B5A /* LaunchScreen.storyboard */,
 				0799BB03247979CA00ED8B5A /* Info.plist */,
+			);
+			path = Airplane;
+			sourceTree = "<group>";
+		};
+		0799BB122479999600ED8B5A /* Home */ = {
+			isa = PBXGroup;
+			children = (
 				0799BB1024797CEF00ED8B5A /* HomeAssembly.swift */,
 				0799BB0B24797C9800ED8B5A /* HomeInteractor.swift */,
 				0799BB0924797C7E00ED8B5A /* HomePresenter.swift */,
 				0799BB0D24797CBD00ED8B5A /* HomeRouter.swift */,
 				0799BAF9247979C900ED8B5A /* HomeViewController.swift */,
 			);
-			path = Airplane;
+			path = Home;
+			sourceTree = "<group>";
+		};
+		0799BB13247999A400ED8B5A /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				0799BB14247999CA00ED8B5A /* Model.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		5F5E8038E437BC3A13937B75 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1BF93FE345624C6B3EBB4F91 /* Pods_Airplane.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		644DCB17EEBB6BBBD427F3A6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8A2E059B698381E4B5AB3196 /* Pods-Airplane.debug.xcconfig */,
+				2DBD74FA94307093ADC0A1CA /* Pods-Airplane.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,9 +130,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0799BB06247979CA00ED8B5A /* Build configuration list for PBXNativeTarget "Airplane" */;
 			buildPhases = (
+				EF5BE44742AF94B9968DF46A /* [CP] Check Pods Manifest.lock */,
 				0799BAEE247979C900ED8B5A /* Sources */,
 				0799BAEF247979C900ED8B5A /* Frameworks */,
 				0799BAF0247979C900ED8B5A /* Resources */,
+				4BE0584D0541831D6670098F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -145,11 +191,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4BE0584D0541831D6670098F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Airplane/Pods-Airplane-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Airplane/Pods-Airplane-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Airplane/Pods-Airplane-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF5BE44742AF94B9968DF46A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Airplane-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0799BAEE247979C900ED8B5A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0799BB15247999CA00ED8B5A /* Model.swift in Sources */,
 				0799BAFA247979C900ED8B5A /* HomeViewController.swift in Sources */,
 				0799BB0E24797CBD00ED8B5A /* HomeRouter.swift in Sources */,
 				0799BAF6247979C900ED8B5A /* AppDelegate.swift in Sources */,
@@ -298,6 +387,7 @@
 		};
 		0799BB07247979CA00ED8B5A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A2E059B698381E4B5AB3196 /* Pods-Airplane.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -315,6 +405,7 @@
 		};
 		0799BB08247979CA00ED8B5A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2DBD74FA94307093ADC0A1CA /* Pods-Airplane.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
