@@ -21,6 +21,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Airplane"
         configureTableView()
         self.presenter?.viewDidLoad()
     }
