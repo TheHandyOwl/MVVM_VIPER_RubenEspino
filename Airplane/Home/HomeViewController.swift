@@ -33,11 +33,13 @@ extension HomeViewController : HomeView {
     func update(data: [UserResult]) {
         userData = data
         tableView.reloadData()
+        /*
         userData.forEach { (user) in
             if let userMail = user.email {
                 print("Mail: \(userMail)")
             }
         }
+        */
     }
     
 }
@@ -73,7 +75,7 @@ extension HomeViewController : UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: false)
+        presenter?.prepareForRouter(user: userData[indexPath.row])
     }
     
 }

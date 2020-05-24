@@ -9,7 +9,7 @@
 import UIKit
 
 protocol HomeRouting {
-    
+    func goToDetail(user: UserResult)
 }
 
 class HomeRouter {
@@ -22,5 +22,11 @@ class HomeRouter {
 }
 
 extension HomeRouter : HomeRouting {
+    
+    func goToDetail(user: UserResult) {
+        let vc = DetailViewController(nibName: "DetailViewController", bundle: Bundle.main)
+        vc.userData = user
+        self.view.present(vc, animated: true)
+    }
     
 }

@@ -30,13 +30,13 @@ extension HomeInteractor : HomeUseCase {
         Alamofire
             .request(url, method: .get, parameters: ["results": numberOfUsers], encoding: URLEncoding.queryString)
             .responseDecodable { (response: DataResponse<Users>) in
-                print("""
-                    #-----
-                    Request: \(String(describing: response.request))
-                    Response: \(String(describing: response.response))
-                    Result: \(String(describing: response.result))
-                    #-----
-                    """)
+//                print("""
+//                    #-----
+//                    Request: \(String(describing: response.request))
+//                    Response: \(String(describing: response.response))
+//                    Result: \(String(describing: response.result))
+//                    #-----
+//                    """)
                 if let users = response.value {
                     callback(ServiceResult.success(data: users))
                 } else {

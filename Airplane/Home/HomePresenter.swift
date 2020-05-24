@@ -10,6 +10,7 @@ import Foundation
 
 protocol HomePresentation {
     func viewDidLoad()
+    func prepareForRouter(user: UserResult)
 }
 
 class HomePresenter {
@@ -27,6 +28,11 @@ class HomePresenter {
 }
 
 extension HomePresenter : HomePresentation {
+    
+    func prepareForRouter(user: UserResult) {
+        router.goToDetail(user: user)
+    }
+    
     func viewDidLoad() {
         self.interactor.fetchRequest(numberOfUsers: 99) { (result) in
             switch result {
