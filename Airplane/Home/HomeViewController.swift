@@ -9,21 +9,31 @@
 import UIKit
 
 protocol HomeView : class {
-    
+    func update(data: [UserResult])
 }
 
 class HomeViewController: UIViewController {
 
     var presenter : HomePresenter?
+    var userData : [UserResult] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        self.presenter?.viewDidLoad()
     }
 
 }
 
 extension HomeViewController : HomeView {
+    
+    func update(data: [UserResult]) {
+        userData = data
+        userData.forEach { (user) in
+            if let userMail = user.email {
+                print("Mail: \(userMail)")
+            }
+        }
+    }
     
 }
 

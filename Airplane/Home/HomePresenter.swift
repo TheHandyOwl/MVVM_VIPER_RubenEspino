@@ -28,7 +28,15 @@ class HomePresenter {
 
 extension HomePresenter : HomePresentation {
     func viewDidLoad() {
-        
+        self.interactor.fetchRequest(numberOfUsers: 99) { (result) in
+            switch result {
+            case .success(data: let data):
+                guard let users = data as? Users, let usersData = users.results else { return }
+                self.view?.update(data: usersData)
+            case .failed(error: let error):
+                print("Error: \(error)")
+            }
+        }
     }
     
 }
