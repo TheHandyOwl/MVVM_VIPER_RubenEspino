@@ -34,7 +34,7 @@ extension HomePresenter : HomePresentation {
                 guard let users = data as? Users, let usersData = users.results else { return }
                 self.view?.update(data: usersData)
             case .failed(error: let error):
-                print("Error: \(error)")
+                print("Error: \(error?.description)")
             }
         }
     }

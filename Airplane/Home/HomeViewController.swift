@@ -21,7 +21,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureCell()
+        configureTableView()
         self.presenter?.viewDidLoad()
     }
 
@@ -51,7 +51,7 @@ extension HomeViewController : UITableViewDataSource {
 
 extension HomeViewController : UITableViewDelegate {
     
-    func configureCell() {
+    func configureTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "HomeUserTableViewCell", bundle: nil), forCellReuseIdentifier: "HomeUserTableViewCell")
