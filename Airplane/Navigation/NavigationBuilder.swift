@@ -19,7 +19,8 @@ class NavigationBuilder {
         navigationController.navigationBar.barTintColor = UIColor.systemBlue
         navigationController.navigationBar.backgroundColor = UIColor.systemBlue
         
-        let font = UIFont.systemFont(ofSize: 50)
+        //Normal
+        let font = UIFont.systemFont(ofSize: 30)
         let shadow = NSShadow()
         shadow.shadowColor = UIColor.red
         shadow.shadowBlurRadius = 5
@@ -29,8 +30,18 @@ class NavigationBuilder {
             .foregroundColor : UIColor.white,
             .shadow : shadow
         ]
+        
+        //Large
+        let fontLarge = UIFont.systemFont(ofSize: 50)
+        
+        let attributesLarge: [NSAttributedString.Key: Any] = [
+            .font : fontLarge,
+            .foregroundColor : UIColor.white,
+            .shadow : shadow
+        ]
+        
         navigationController.navigationBar.titleTextAttributes = attributes
-        navigationController.navigationBar.largeTitleTextAttributes = attributes
+        navigationController.navigationBar.largeTitleTextAttributes = attributesLarge
         navigationController.navigationBar.prefersLargeTitles = true
 
         if #available(iOS 13, *) {

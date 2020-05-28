@@ -26,7 +26,9 @@ extension HomeRouter : HomeRouting {
     func goToDetail(user: UserResult) {
         let vc = DetailViewController(nibName: "DetailViewController", bundle: Bundle.main)
         vc.userData = user
-        self.view.present(vc, animated: true)
+//        vc.modalTransitionStyle = .flipHorizontal
+//        self.view.present(vc, animated: true)
+        self.view.navigationController?.pushViewController(vc, animated: true)
     }
     
 }
