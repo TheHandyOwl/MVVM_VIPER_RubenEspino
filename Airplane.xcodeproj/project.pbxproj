@@ -12,6 +12,10 @@
 		07206316247AD79900B3DD7D /* ExtensionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07206315247AD79900B3DD7D /* ExtensionViewCell.swift */; };
 		073002AF2480305D001BCF45 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073002AD2480305D001BCF45 /* ContactTableViewCell.swift */; };
 		073002B02480305D001BCF45 /* ContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 073002AE2480305D001BCF45 /* ContactTableViewCell.xib */; };
+		073002BE24804416001BCF45 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073002BA24804415001BCF45 /* DetailPresenter.swift */; };
+		073002BF24804416001BCF45 /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073002BB24804415001BCF45 /* DetailRouter.swift */; };
+		073002C024804416001BCF45 /* DetailAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073002BC24804416001BCF45 /* DetailAssembly.swift */; };
+		073002C124804416001BCF45 /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073002BD24804416001BCF45 /* DetailInteractor.swift */; };
 		0799BAF6247979C900ED8B5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0799BAF5247979C900ED8B5A /* AppDelegate.swift */; };
 		0799BAF8247979C900ED8B5A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0799BAF7247979C900ED8B5A /* SceneDelegate.swift */; };
 		0799BAFA247979C900ED8B5A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0799BAF9247979C900ED8B5A /* HomeViewController.swift */; };
@@ -36,6 +40,10 @@
 		07206315247AD79900B3DD7D /* ExtensionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionViewCell.swift; sourceTree = "<group>"; };
 		073002AD2480305D001BCF45 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		073002AE2480305D001BCF45 /* ContactTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactTableViewCell.xib; sourceTree = "<group>"; };
+		073002BA24804415001BCF45 /* DetailPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
+		073002BB24804415001BCF45 /* DetailRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailRouter.swift; sourceTree = "<group>"; };
+		073002BC24804416001BCF45 /* DetailAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailAssembly.swift; sourceTree = "<group>"; };
+		073002BD24804416001BCF45 /* DetailInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
 		0799BAF2247979C900ED8B5A /* Airplane.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Airplane.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0799BAF5247979C900ED8B5A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0799BAF7247979C900ED8B5A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -155,6 +163,10 @@
 		07B22617247B2DB0006FB68D /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				073002BC24804416001BCF45 /* DetailAssembly.swift */,
+				073002BD24804416001BCF45 /* DetailInteractor.swift */,
+				073002BA24804415001BCF45 /* DetailPresenter.swift */,
+				073002BB24804415001BCF45 /* DetailRouter.swift */,
 				07B22618247B2DD7006FB68D /* DetailViewController.swift */,
 				07B22619247B2DD7006FB68D /* DetailViewController.xib */,
 			);
@@ -296,16 +308,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				073002BF24804416001BCF45 /* DetailRouter.swift in Sources */,
 				073002AF2480305D001BCF45 /* ContactTableViewCell.swift in Sources */,
+				073002C024804416001BCF45 /* DetailAssembly.swift in Sources */,
 				0799BB15247999CA00ED8B5A /* Model.swift in Sources */,
 				0799BAFA247979C900ED8B5A /* HomeViewController.swift in Sources */,
 				07206316247AD79900B3DD7D /* ExtensionViewCell.swift in Sources */,
 				07B2261A247B2DD7006FB68D /* DetailViewController.swift in Sources */,
+				073002BE24804416001BCF45 /* DetailPresenter.swift in Sources */,
 				07B22616247B1958006FB68D /* NavigationBuilder.swift in Sources */,
 				0799BB0E24797CBD00ED8B5A /* HomeRouter.swift in Sources */,
 				0799BAF6247979C900ED8B5A /* AppDelegate.swift in Sources */,
 				0799BAF8247979C900ED8B5A /* SceneDelegate.swift in Sources */,
 				07206312247AC5FD00B3DD7D /* HomeUserTableViewCell.swift in Sources */,
+				073002C124804416001BCF45 /* DetailInteractor.swift in Sources */,
 				0799BB0C24797C9800ED8B5A /* HomeInteractor.swift in Sources */,
 				0799BB0A24797C7E00ED8B5A /* HomePresenter.swift in Sources */,
 				0799BB1124797CEF00ED8B5A /* HomeAssembly.swift in Sources */,
@@ -453,7 +469,8 @@
 			baseConfigurationReference = C480B97EA252965F8553E87E /* Pods-Airplane.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Airplane/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -461,6 +478,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tho.swift.Airplane;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -471,7 +489,8 @@
 			baseConfigurationReference = 06FE9B04B7F8EDCACF17B5D8 /* Pods-Airplane.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Airplane/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -479,6 +498,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tho.swift.Airplane;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

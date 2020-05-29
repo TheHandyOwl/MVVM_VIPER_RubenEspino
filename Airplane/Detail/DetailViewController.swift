@@ -8,10 +8,15 @@
 
 import UIKit
 
+protocol DetailView : class {
+    func update(dato: UserResult)
+}
+
 class DetailViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    var presenter : DetailPresenter?
     var userData : UserResult?
     
     override func viewDidLoad() {
@@ -43,6 +48,14 @@ class DetailViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
 
+}
+
+extension DetailViewController : DetailView {
+    
+    func update(dato: UserResult) {
+        userData = dato
+    }
+    
 }
 
 extension DetailViewController : UITableViewDataSource {
