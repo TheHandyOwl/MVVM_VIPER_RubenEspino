@@ -8,6 +8,12 @@
 
 import UIKit
 
+enum UserDetailCell {
+    case contact
+    case map
+    case user
+}
+
 protocol DetailView : class {
     func update(dato: UserResult)
 }
@@ -18,6 +24,8 @@ class DetailViewController: UIViewController {
     
     var presenter : DetailPresenter?
     var userData : UserResult?
+    
+    private let mCellTypes = [UserDetailCell.user, UserDetailCell.contact, UserDetailCell.map]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,10 +68,21 @@ extension DetailViewController : DetailView {
 
 extension DetailViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 99
+        return mCellTypes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        switch mCellTypes[indexPath.row] {
+        case .contact:
+                return cellContact(tableView, cellForRowAt: indexPath)
+        case .map:
+                return cellMap(tableView, cellForRowAt: indexPath)
+        case .user:
+                return cellUser(tableView, cellForRowAt: indexPath)
+        }
+    }
+    
+    private func cellContact(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> ContactTableViewCell {
         let cellID = "ContactTableViewCell"
         
         var cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
@@ -71,9 +90,35 @@ extension DetailViewController : UITableViewDataSource {
             cell = UITableView().dequeueReusableCell(withIdentifier: cellID, for: indexPath)
         }
         
-        cell.textLabel?.text = userData?.email
+        cell.textLabel?.text = "Contact"
          
-        return cell
+        return cell as! ContactTableViewCell
+    }
+    
+    private func cellMap(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> MapTableViewCell {
+        let cellID = "MapTableViewCell"
+        
+        var cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
+        if cell == nil {
+            cell = UITableView().dequeueReusableCell(withIdentifier: cellID, for: indexPath)
+        }
+        
+        cell.textLabel?.text = "Map"
+         
+        return cell as! MapTableViewCell
+    }
+    
+    private func cellUser(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UserTableViewCell {
+        let cellID = "UserTableViewCell"
+        
+        var cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
+        if cell == nil {
+            cell = UITableView().dequeueReusableCell(withIdentifier: cellID, for: indexPath)
+        }
+        
+        cell.textLabel?.text = "User"
+         
+        return cell as! UserTableViewCell
     }
     
 }
@@ -83,7 +128,14 @@ extension DetailViewController : UITableViewDelegate {
         tableView.delegate = self
         tableView.dataSource = self
         
-        let cellID = "ContactTableViewCell"
+        var cellID = ""
+        cellID = "ContactTableViewCell"
+        tableView.register(UINib(nibName: cellID, bundle: nil), forCellReuseIdentifier: cellID)
+        
+        cellID = "MapTableViewCell"
+        tableView.register(UINib(nibName: cellID, bundle: nil), forCellReuseIdentifier: cellID)
+        
+        cellID = "UserTableViewCell"
         tableView.register(UINib(nibName: cellID, bundle: nil), forCellReuseIdentifier: cellID)
     }
 }

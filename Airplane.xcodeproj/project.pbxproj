@@ -30,6 +30,10 @@
 		07B22616247B1958006FB68D /* NavigationBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B22615247B1958006FB68D /* NavigationBuilder.swift */; };
 		07B2261A247B2DD7006FB68D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B22618247B2DD7006FB68D /* DetailViewController.swift */; };
 		07B2261B247B2DD7006FB68D /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07B22619247B2DD7006FB68D /* DetailViewController.xib */; };
+		07C0383224815C31004BAAA1 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C0383024815C31004BAAA1 /* UserTableViewCell.swift */; };
+		07C0383324815C31004BAAA1 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07C0383124815C31004BAAA1 /* UserTableViewCell.xib */; };
+		07C0383624815C3E004BAAA1 /* MapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C0383424815C3E004BAAA1 /* MapTableViewCell.swift */; };
+		07C0383724815C3E004BAAA1 /* MapTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07C0383524815C3E004BAAA1 /* MapTableViewCell.xib */; };
 		532BBF313A244199F618E6C8 /* Pods_Airplane.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 716EAC4A75C5B30A1CE36AC1 /* Pods_Airplane.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +64,10 @@
 		07B22615247B1958006FB68D /* NavigationBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBuilder.swift; sourceTree = "<group>"; };
 		07B22618247B2DD7006FB68D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		07B22619247B2DD7006FB68D /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		07C0383024815C31004BAAA1 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		07C0383124815C31004BAAA1 /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
+		07C0383424815C3E004BAAA1 /* MapTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTableViewCell.swift; sourceTree = "<group>"; };
+		07C0383524815C3E004BAAA1 /* MapTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapTableViewCell.xib; sourceTree = "<group>"; };
 		716EAC4A75C5B30A1CE36AC1 /* Pods_Airplane.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Airplane.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C480B97EA252965F8553E87E /* Pods-Airplane.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Airplane.debug.xcconfig"; path = "Target Support Files/Pods-Airplane/Pods-Airplane.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,6 +91,10 @@
 				073002AE2480305D001BCF45 /* ContactTableViewCell.xib */,
 				07206310247AC5FD00B3DD7D /* HomeUserTableViewCell.swift */,
 				07206311247AC5FD00B3DD7D /* HomeUserTableViewCell.xib */,
+				07C0383424815C3E004BAAA1 /* MapTableViewCell.swift */,
+				07C0383524815C3E004BAAA1 /* MapTableViewCell.xib */,
+				07C0383024815C31004BAAA1 /* UserTableViewCell.swift */,
+				07C0383124815C31004BAAA1 /* UserTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -253,8 +265,10 @@
 				073002B02480305D001BCF45 /* ContactTableViewCell.xib in Resources */,
 				0799BB02247979CA00ED8B5A /* LaunchScreen.storyboard in Resources */,
 				07206313247AC5FD00B3DD7D /* HomeUserTableViewCell.xib in Resources */,
+				07C0383324815C31004BAAA1 /* UserTableViewCell.xib in Resources */,
 				07B2261B247B2DD7006FB68D /* DetailViewController.xib in Resources */,
 				0799BAFF247979CA00ED8B5A /* Assets.xcassets in Resources */,
+				07C0383724815C3E004BAAA1 /* MapTableViewCell.xib in Resources */,
 				0799BAFD247979C900ED8B5A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -314,10 +328,12 @@
 				0799BB15247999CA00ED8B5A /* Model.swift in Sources */,
 				0799BAFA247979C900ED8B5A /* HomeViewController.swift in Sources */,
 				07206316247AD79900B3DD7D /* ExtensionViewCell.swift in Sources */,
+				07C0383624815C3E004BAAA1 /* MapTableViewCell.swift in Sources */,
 				07B2261A247B2DD7006FB68D /* DetailViewController.swift in Sources */,
 				073002BE24804416001BCF45 /* DetailPresenter.swift in Sources */,
 				07B22616247B1958006FB68D /* NavigationBuilder.swift in Sources */,
 				0799BB0E24797CBD00ED8B5A /* HomeRouter.swift in Sources */,
+				07C0383224815C31004BAAA1 /* UserTableViewCell.swift in Sources */,
 				0799BAF6247979C900ED8B5A /* AppDelegate.swift in Sources */,
 				0799BAF8247979C900ED8B5A /* SceneDelegate.swift in Sources */,
 				07206312247AC5FD00B3DD7D /* HomeUserTableViewCell.swift in Sources */,
