@@ -45,19 +45,9 @@ extension HomeViewController : HomeView {
 }
 
 extension HomeViewController : UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         userData.count
-    }
-    
-}
-
-
-extension HomeViewController : UITableViewDelegate {
-    
-    func configureTableView() {
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(UINib(nibName: "HomeUserTableViewCell", bundle: nil), forCellReuseIdentifier: "HomeUserTableViewCell")
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -78,4 +68,14 @@ extension HomeViewController : UITableViewDelegate {
         presenter?.prepareForRouter(user: userData[indexPath.row])
     }
     
+}
+
+extension HomeViewController : UITableViewDelegate {
+    
+    func configureTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(UINib(nibName: "HomeUserTableViewCell", bundle: nil), forCellReuseIdentifier: "HomeUserTableViewCell")
+    }
+        
 }
