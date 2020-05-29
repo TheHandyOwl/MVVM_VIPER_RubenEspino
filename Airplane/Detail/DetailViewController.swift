@@ -19,7 +19,7 @@ protocol DetailView : class {
 }
 
 class DetailViewController: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     var presenter : DetailPresenter?
@@ -55,7 +55,7 @@ class DetailViewController: UIViewController {
     @objc func backToMainView() {
         navigationController?.popViewController(animated: true)
     }
-
+    
 }
 
 extension DetailViewController : DetailView {
@@ -74,51 +74,41 @@ extension DetailViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch mCellTypes[indexPath.row] {
         case .contact:
-                return cellContact(tableView, cellForRowAt: indexPath)
+            return cellContact(tableView, cellForRowAt: indexPath)
         case .map:
-                return cellMap(tableView, cellForRowAt: indexPath)
+            return cellMap(tableView, cellForRowAt: indexPath)
         case .user:
-                return cellUser(tableView, cellForRowAt: indexPath)
+            return cellUser(tableView, cellForRowAt: indexPath)
         }
     }
     
     private func cellContact(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> ContactTableViewCell {
         let cellID = "ContactTableViewCell"
-        
-        var cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
-        if cell == nil {
-            cell = UITableView().dequeueReusableCell(withIdentifier: cellID, for: indexPath)
-        }
-        
+        let cell = initCell(_tableView: tableView, indexPath: indexPath, cellID: cellID) as! ContactTableViewCell
         cell.textLabel?.text = "Contact"
-         
-        return cell as! ContactTableViewCell
+        return cell
     }
     
     private func cellMap(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> MapTableViewCell {
         let cellID = "MapTableViewCell"
-        
-        var cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
-        if cell == nil {
-            cell = UITableView().dequeueReusableCell(withIdentifier: cellID, for: indexPath)
-        }
-        
+        let cell = initCell(_tableView: tableView, indexPath: indexPath, cellID: cellID) as! MapTableViewCell
         cell.textLabel?.text = "Map"
-         
-        return cell as! MapTableViewCell
+        return cell
     }
     
     private func cellUser(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UserTableViewCell {
         let cellID = "UserTableViewCell"
-        
+        let cell = initCell(_tableView: tableView, indexPath: indexPath, cellID: cellID) as! UserTableViewCell
+        cell.textLabel?.text = "User"
+        return cell
+    }
+    
+    private func initCell(_tableView: UITableView, indexPath: IndexPath, cellID: String) -> UITableViewCell {
         var cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
         if cell == nil {
             cell = UITableView().dequeueReusableCell(withIdentifier: cellID, for: indexPath)
         }
-        
-        cell.textLabel?.text = "User"
-         
-        return cell as! UserTableViewCell
+        return cell
     }
     
 }
