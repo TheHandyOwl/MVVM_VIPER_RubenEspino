@@ -82,28 +82,32 @@ extension DetailViewController : UITableViewDataSource {
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
     private func cellContact(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> ContactTableViewCell {
         let cellID = "ContactTableViewCell"
-        let cell = initCell(_tableView: tableView, indexPath: indexPath, cellID: cellID) as! ContactTableViewCell
+        let cell = initCell(tableView, indexPath: indexPath, cellID: cellID) as! ContactTableViewCell
         cell.textLabel?.text = "Contact"
         return cell
     }
     
     private func cellMap(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> MapTableViewCell {
         let cellID = "MapTableViewCell"
-        let cell = initCell(_tableView: tableView, indexPath: indexPath, cellID: cellID) as! MapTableViewCell
+        let cell = initCell(tableView, indexPath: indexPath, cellID: cellID) as! MapTableViewCell
         cell.textLabel?.text = "Map"
         return cell
     }
     
     private func cellUser(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UserTableViewCell {
         let cellID = "UserTableViewCell"
-        let cell = initCell(_tableView: tableView, indexPath: indexPath, cellID: cellID) as! UserTableViewCell
+        let cell = initCell(tableView, indexPath: indexPath, cellID: cellID) as! UserTableViewCell
         cell.textLabel?.text = "User"
         return cell
     }
     
-    private func initCell(_tableView: UITableView, indexPath: IndexPath, cellID: String) -> UITableViewCell {
+    private func initCell(_ tableView: UITableView, indexPath: IndexPath, cellID: String) -> UITableViewCell {
         var cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
         if cell == nil {
             cell = UITableView().dequeueReusableCell(withIdentifier: cellID, for: indexPath)
