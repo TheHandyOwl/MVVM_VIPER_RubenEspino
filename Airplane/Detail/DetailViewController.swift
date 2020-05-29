@@ -101,7 +101,9 @@ extension DetailViewController : UITableViewDataSource {
     private func cellContact(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> ContactTableViewCell {
         let cellID = "ContactTableViewCell"
         let cell = initCell(tableView, indexPath: indexPath, cellID: cellID) as! ContactTableViewCell
-        cell.textLabel?.text = "Contact"
+        if let user = userData {
+            cell.configureCell(user: user)
+        }
         return cell
     }
     

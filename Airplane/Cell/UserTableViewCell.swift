@@ -53,8 +53,8 @@ class UserTableViewCell: UITableViewCell {
         //    |> RoundCornerImageProcessor(cornerRadius: 20)
         //let processor = DownsamplingImageProcessor(size: (cellImage?.bounds.size)!)
         let processor = RoundCornerImageProcessor(cornerRadius: 40)
-        mImage?.kf.indicatorType = .activity
-        mImage?.kf.setImage(
+        self.mImage?.kf.indicatorType = .activity
+        self.mImage?.kf.setImage(
             with: url,
             placeholder: UIImage(named: "placeholderImage"),
             options: [
