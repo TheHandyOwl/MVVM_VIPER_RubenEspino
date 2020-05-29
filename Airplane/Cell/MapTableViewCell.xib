@@ -16,6 +16,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
             </tableViewCellContentView>
+            <color key="backgroundColor" red="0.27321776749999999" green="0.59100252389999997" blue="0.84319788220000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <point key="canvasLocation" x="139" y="113"/>
         </tableViewCell>

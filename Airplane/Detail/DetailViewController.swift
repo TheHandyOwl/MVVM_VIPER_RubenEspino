@@ -71,6 +71,18 @@ extension DetailViewController : UITableViewDataSource {
         return mCellTypes.count
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        switch mCellTypes[indexPath.row] {
+        case .contact:
+            return 150
+        case .map:
+            return 400
+        case .user:
+            return 250
+        }
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch mCellTypes[indexPath.row] {
         case .contact:
@@ -103,7 +115,9 @@ extension DetailViewController : UITableViewDataSource {
     private func cellUser(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UserTableViewCell {
         let cellID = "UserTableViewCell"
         let cell = initCell(tableView, indexPath: indexPath, cellID: cellID) as! UserTableViewCell
-        cell.textLabel?.text = "User"
+        if let user = userData {
+            cell.configureCell(user: user)
+        }
         return cell
     }
     
