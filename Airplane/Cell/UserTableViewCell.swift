@@ -1,69 +1,63 @@
 //
-//  HomeUserTableViewCell.swift
+//  UserTableViewCell.swift
 //  Airplane
 //
-//  Created by Carlos on 24/05/2020.
+//  Created by Carlos on 29/05/2020.
 //  Copyright © 2020 TestCompany. All rights reserved.
 //
 
 import UIKit
 import Kingfisher
 
-class HomeUserTableViewCell: UITableViewCell {
+class UserTableViewCell: UITableViewCell {
+
+    @IBOutlet weak var mView: UIView!
+    @IBOutlet weak var mImage: UIImageView!
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var age: UILabel!
     
-    @IBOutlet weak var cellView: UIView!
-    @IBOutlet weak var cellImage: UIImageView!
-    @IBOutlet weak var cellName: UILabel!
-    @IBOutlet weak var cellGender: UILabel!
-    @IBOutlet weak var cellAge: UILabel!
-    
+    static var estimatedHeight : CGFloat = 250.0
+        
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        configureShadow(view: cellView, image: cellImage, map: nil)
+        configureShadow(view: mView, image: mImage, map: nil, cornerRadius: 65.0)
+        animationCell(view: mView, duration: 0.3)
     }
-    
+
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
+
         // Configure the view for the selected state
     }
     
-    func configureCell(user: UserResult, index: Int) {
+    override func prepareForReuse() {
+        self.mImage?.image = nil
+        self.name.text = ""
+        self.age.text = ""
+    }
+    
+    func configureCell(user: UserResult) {
         guard let name = user.name?.first,
             let surname = user.name?.last,
-            let gender = user.gender,
             let age = user.dob?.age,
-            let imageMedium = user.picture?.medium
+            let imageLarge = user.picture?.large
             else { return }
         
-        self.cellName.text = "\(index).\nName: \(name) \(surname)"
-        self.cellGender.text = "Gender: \(gender)"
-        self.cellAge.text = "Age: \(String(age))"
+        self.name.text = "Name: \(name) \(surname)"
+        self.age.text = "Age: \(String(age))"
         
-        /*
-         let url = URL(string: imageMedium)
-         let data = try? Data(contentsOf: url!)
-         self.cellImage.image = UIImage(data: data!)
-         */
-        loadImage(imageNamed: imageMedium)
+        loadImage(imageNamed: imageLarge)
     }
-    
-    override func prepareForReuse() {
-        self.cellImage.image = nil
-        self.cellName.text = ""
-        self.cellGender.text = ""
-        self.cellAge.text = ""
-    }
-    
+
     func loadImage(imageNamed: String) {
         let url = URL(string: imageNamed)
         //let processor = DownsamplingImageProcessor(size: (cellImage?.bounds.size)!)
         //    |> RoundCornerImageProcessor(cornerRadius: 20)
         //let processor = DownsamplingImageProcessor(size: (cellImage?.bounds.size)!)
-        let processor = RoundCornerImageProcessor(cornerRadius: 40)
-        cellImage?.kf.indicatorType = .activity
-        cellImage?.kf.setImage(
+        let processor = RoundCornerImageProcessor(cornerRadius: 65)
+        self.mImage?.kf.indicatorType = .activity
+        self.mImage?.kf.setImage(
             with: url,
             placeholder: UIImage(named: "placeholderImage"),
             options: [
@@ -83,4 +77,5 @@ class HomeUserTableViewCell: UITableViewCell {
         }
         
     }
+    
 }
