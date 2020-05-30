@@ -21,10 +21,8 @@ class UserTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        configureShadow(view: mView)
-        mImage.layer.cornerRadius = 65
-        mImage.layer.borderColor = UIColor.systemBlue.cgColor
-        mImage.layer.borderWidth = 4
+        configureShadow(view: mView, image: mImage, map: nil, cornerRadius: 65.0)
+        animationCell(view: mView, duration: 0.3)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

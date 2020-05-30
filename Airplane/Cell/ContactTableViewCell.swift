@@ -20,7 +20,8 @@ class ContactTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        configureShadow(view: mView)
+        configureShadow(view: mView, image: nil, map: nil)
+        animationCell(view: mView, duration: 0.6)
         tapPhone()
         tapEmail()
     }

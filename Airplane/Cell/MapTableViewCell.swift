@@ -19,7 +19,8 @@ class MapTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        configureShadow(view: mView)
+        configureShadow(view: mView, image: nil, map: mapView)
+        animationCell(view: mView, duration: 0.9)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
