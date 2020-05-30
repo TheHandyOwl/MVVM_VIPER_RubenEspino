@@ -15,11 +15,16 @@ class UserTableViewCell: UITableViewCell {
     @IBOutlet weak var mImage: UIImageView!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var age: UILabel!
+    
+    static var estimatedHeight : CGFloat = 250.0
         
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         configureShadow(view: mView)
+        mImage.layer.cornerRadius = 65
+        mImage.layer.borderColor = UIColor.systemBlue.cgColor
+        mImage.layer.borderWidth = 4
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -52,7 +57,7 @@ class UserTableViewCell: UITableViewCell {
         //let processor = DownsamplingImageProcessor(size: (cellImage?.bounds.size)!)
         //    |> RoundCornerImageProcessor(cornerRadius: 20)
         //let processor = DownsamplingImageProcessor(size: (cellImage?.bounds.size)!)
-        let processor = RoundCornerImageProcessor(cornerRadius: 40)
+        let processor = RoundCornerImageProcessor(cornerRadius: 65)
         self.mImage?.kf.indicatorType = .activity
         self.mImage?.kf.setImage(
             with: url,

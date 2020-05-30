@@ -75,11 +75,11 @@ extension DetailViewController : UITableViewDataSource {
         
         switch mCellTypes[indexPath.row] {
         case .contact:
-            return 150
+            return ContactTableViewCell.estimatedHeight
         case .map:
             return 400
         case .user:
-            return 250
+            return UserTableViewCell.estimatedHeight
         }
     }
     

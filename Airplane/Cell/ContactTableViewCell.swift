@@ -15,6 +15,8 @@ class ContactTableViewCell: UITableViewCell {
     @IBOutlet weak var phone: UILabel!
     @IBOutlet weak var email: UILabel!
     
+    static var estimatedHeight : CGFloat = 150.0
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -80,16 +82,19 @@ extension ContactTableViewCell : MFMailComposeViewControllerDelegate {
     @objc func tapEmailFunction(sender: UITapGestureRecognizer) {
         print("tapped")
         
-        let email = "\(self.email.text ?? "")"
         if MFMailComposeViewController.canSendMail() {
             let mail = MFMailComposeViewController()
             mail.mailComposeDelegate = self
-            mail.setToRecipients([email])
-            mail.setMessageBody("<p>You're so awesome!</p>", isHTML: true)
+            
+            if let email = self.email.text {
+                mail.setToRecipients([email])
+                mail.setMessageBody("<p>You're so awesome!</p>", isHTML: true)
 
-            let window = UIApplication.shared.windows.filter { $0.isKeyWindow }.first
-            window?.rootViewController?.present(mail, animated: true, completion: nil)
-            //present(mail, animated: true)
+                let window = UIApplication.shared.windows.filter { $0.isKeyWindow }.first
+                window?.rootViewController?.present(mail, animated: true, completion: nil)
+                //present(mail, animated: true)
+            }
+            
         } else {
             // show failure alert
             let alert = UIAlertController(title: "Email no disponible", message: "Verifique que el correo es válido", preferredStyle: .alert)

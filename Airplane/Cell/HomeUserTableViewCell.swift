@@ -21,6 +21,9 @@ class HomeUserTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         configureShadow(view: cellView)
+        cellImage.layer.cornerRadius = 40
+        cellImage.layer.borderColor = UIColor.systemBlue.cgColor
+        cellImage.layer.borderWidth = 4
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
