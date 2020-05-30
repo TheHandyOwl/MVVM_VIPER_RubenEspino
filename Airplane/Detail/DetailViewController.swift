@@ -77,7 +77,7 @@ extension DetailViewController : UITableViewDataSource {
         case .contact:
             return ContactTableViewCell.estimatedHeight
         case .map:
-            return 400
+            return MapTableViewCell.estimatedHeight
         case .user:
             return UserTableViewCell.estimatedHeight
         }
@@ -110,7 +110,9 @@ extension DetailViewController : UITableViewDataSource {
     private func cellMap(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> MapTableViewCell {
         let cellID = "MapTableViewCell"
         let cell = initCell(tableView, indexPath: indexPath, cellID: cellID) as! MapTableViewCell
-        cell.textLabel?.text = "Map"
+        if let user = userData {
+            cell.configureCell(user: user)
+        }
         return cell
     }
     
