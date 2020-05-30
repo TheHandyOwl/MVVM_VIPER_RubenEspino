@@ -23,7 +23,6 @@
                                 <rect key="frame" x="71" y="8" width="130" height="130"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="130" id="cIg-jt-ofV"/>
-                                    <constraint firstAttribute="width" constant="130" id="oF8-jV-9dW"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7fF-x5-ysM">

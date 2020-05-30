@@ -20,7 +20,7 @@ class NavigationBuilder {
         navigationController.navigationBar.backgroundColor = UIColor.systemBlue
         
         //Normal
-        let font = UIFont.systemFont(ofSize: 30)
+        let font = UIFont.systemFont(ofSize: 28)
         let shadow = NSShadow()
         shadow.shadowColor = UIColor.red
         shadow.shadowBlurRadius = 5
