@@ -16,6 +16,9 @@
 		073002BF24804416001BCF45 /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073002BB24804415001BCF45 /* DetailRouter.swift */; };
 		073002C024804416001BCF45 /* DetailAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073002BC24804416001BCF45 /* DetailAssembly.swift */; };
 		073002C124804416001BCF45 /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073002BD24804416001BCF45 /* DetailInteractor.swift */; };
+		073A24A22482D13200A46F45 /* ViewLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073A24A12482D13200A46F45 /* ViewLoadable.swift */; };
+		073A24A52482D45200A46F45 /* AddUserControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073A24A42482D45200A46F45 /* AddUserControl.swift */; };
+		073A24A72482D46200A46F45 /* AddUserControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 073A24A62482D46200A46F45 /* AddUserControl.xib */; };
 		0799BAF6247979C900ED8B5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0799BAF5247979C900ED8B5A /* AppDelegate.swift */; };
 		0799BAF8247979C900ED8B5A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0799BAF7247979C900ED8B5A /* SceneDelegate.swift */; };
 		0799BAFA247979C900ED8B5A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0799BAF9247979C900ED8B5A /* HomeViewController.swift */; };
@@ -48,6 +51,9 @@
 		073002BB24804415001BCF45 /* DetailRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailRouter.swift; sourceTree = "<group>"; };
 		073002BC24804416001BCF45 /* DetailAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailAssembly.swift; sourceTree = "<group>"; };
 		073002BD24804416001BCF45 /* DetailInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
+		073A24A12482D13200A46F45 /* ViewLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewLoadable.swift; sourceTree = "<group>"; };
+		073A24A42482D45200A46F45 /* AddUserControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserControl.swift; sourceTree = "<group>"; };
+		073A24A62482D46200A46F45 /* AddUserControl.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddUserControl.xib; sourceTree = "<group>"; };
 		0799BAF2247979C900ED8B5A /* Airplane.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Airplane.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0799BAF5247979C900ED8B5A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0799BAF7247979C900ED8B5A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +113,15 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		073A24A32482D35A00A46F45 /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				073A24A42482D45200A46F45 /* AddUserControl.swift */,
+				073A24A62482D46200A46F45 /* AddUserControl.xib */,
+			);
+			path = Control;
+			sourceTree = "<group>";
+		};
 		0799BAE9247979C900ED8B5A = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +145,7 @@
 			children = (
 				0799BAF5247979C900ED8B5A /* AppDelegate.swift */,
 				0799BAF7247979C900ED8B5A /* SceneDelegate.swift */,
+				073A24A32482D35A00A46F45 /* Control */,
 				0799BB13247999A400ED8B5A /* Entity */,
 				0799BB122479999600ED8B5A /* Home */,
 				07B22617247B2DB0006FB68D /* Detail */,
@@ -168,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				07B22615247B1958006FB68D /* NavigationBuilder.swift */,
+				073A24A12482D13200A46F45 /* ViewLoadable.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -262,6 +279,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				073A24A72482D46200A46F45 /* AddUserControl.xib in Resources */,
 				073002B02480305D001BCF45 /* ContactTableViewCell.xib in Resources */,
 				0799BB02247979CA00ED8B5A /* LaunchScreen.storyboard in Resources */,
 				07206313247AC5FD00B3DD7D /* HomeUserTableViewCell.xib in Resources */,
@@ -324,12 +342,14 @@
 			files = (
 				073002BF24804416001BCF45 /* DetailRouter.swift in Sources */,
 				073002AF2480305D001BCF45 /* ContactTableViewCell.swift in Sources */,
+				073A24A52482D45200A46F45 /* AddUserControl.swift in Sources */,
 				073002C024804416001BCF45 /* DetailAssembly.swift in Sources */,
 				0799BB15247999CA00ED8B5A /* Model.swift in Sources */,
 				0799BAFA247979C900ED8B5A /* HomeViewController.swift in Sources */,
 				07206316247AD79900B3DD7D /* ExtensionViewCell.swift in Sources */,
 				07C0383624815C3E004BAAA1 /* MapTableViewCell.swift in Sources */,
 				07B2261A247B2DD7006FB68D /* DetailViewController.swift in Sources */,
+				073A24A22482D13200A46F45 /* ViewLoadable.swift in Sources */,
 				073002BE24804416001BCF45 /* DetailPresenter.swift in Sources */,
 				07B22616247B1958006FB68D /* NavigationBuilder.swift in Sources */,
 				0799BB0E24797CBD00ED8B5A /* HomeRouter.swift in Sources */,

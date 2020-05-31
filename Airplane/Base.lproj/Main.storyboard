@@ -16,26 +16,36 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Jno-Qe-zhK">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="142" width="414" height="720"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YlW-86-Yh7">
+                                <rect key="frame" x="8" y="52" width="398" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="F6h-gD-DqD"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Jno-Qe-zhK" secondAttribute="trailing" id="5en-hD-6tx"/>
-                            <constraint firstItem="Jno-Qe-zhK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="PmP-T0-M1b"/>
-                            <constraint firstItem="Jno-Qe-zhK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Xaa-Sc-Jh9"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Jno-Qe-zhK" secondAttribute="bottom" id="iNp-F4-hId"/>
+                            <constraint firstItem="Jno-Qe-zhK" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="5d2-Ff-XyH"/>
+                            <constraint firstItem="Jno-Qe-zhK" firstAttribute="top" secondItem="YlW-86-Yh7" secondAttribute="bottom" id="CYy-69-4wQ"/>
+                            <constraint firstItem="Jno-Qe-zhK" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="VBb-MP-KM1"/>
+                            <constraint firstItem="YlW-86-Yh7" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-8" id="WaM-rk-Ie2"/>
+                            <constraint firstItem="YlW-86-Yh7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="eUh-ze-2p4"/>
+                            <constraint firstItem="Jno-Qe-zhK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ncK-Yg-9Mf"/>
+                            <constraint firstItem="YlW-86-Yh7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="tiT-MU-KTb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="containerStackView" destination="YlW-86-Yh7" id="nLg-2D-Jq7"/>
                         <outlet property="tableView" destination="Jno-Qe-zhK" id="GFu-GZ-h1H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="141" y="136"/>
+            <point key="canvasLocation" x="140.57971014492756" y="135.9375"/>
         </scene>
     </scenes>
 </document>

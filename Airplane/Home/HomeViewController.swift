@@ -14,16 +14,27 @@ protocol HomeView : class {
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var containerStackView: UIStackView!
     @IBOutlet weak var tableView: UITableView!
     
     var presenter : HomePresenter?
     var userData : [UserResult] = []
+
+    lazy var addUserControl : AddUserControl = {
+        let control = AddUserControl.loadNibName()
+        let viewModel = AddUserViewModel(title: "Nuevos pasajeros", stepValue: 0)
+        control.configure(usingViewModel: viewModel) { (stepValue) in
+            print("PASOS: \(stepValue)")
+        }
+        return control
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Airplane"
         configureTableView()
         self.presenter?.viewDidLoad()
+        self.containerStackView.addArrangedSubview(addUserControl)
     }
 
 }
