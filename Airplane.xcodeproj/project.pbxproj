@@ -37,6 +37,7 @@
 		07C0383324815C31004BAAA1 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07C0383124815C31004BAAA1 /* UserTableViewCell.xib */; };
 		07C0383624815C3E004BAAA1 /* MapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C0383424815C3E004BAAA1 /* MapTableViewCell.swift */; };
 		07C0383724815C3E004BAAA1 /* MapTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07C0383524815C3E004BAAA1 /* MapTableViewCell.xib */; };
+		07C3C2DC248470BB000AAEFE /* LottieAvion.json in Resources */ = {isa = PBXBuildFile; fileRef = 07C3C2DB248470BB000AAEFE /* LottieAvion.json */; };
 		532BBF313A244199F618E6C8 /* Pods_Airplane.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 716EAC4A75C5B30A1CE36AC1 /* Pods_Airplane.framework */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +75,7 @@
 		07C0383124815C31004BAAA1 /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
 		07C0383424815C3E004BAAA1 /* MapTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTableViewCell.swift; sourceTree = "<group>"; };
 		07C0383524815C3E004BAAA1 /* MapTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapTableViewCell.xib; sourceTree = "<group>"; };
+		07C3C2DB248470BB000AAEFE /* LottieAvion.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LottieAvion.json; sourceTree = "<group>"; };
 		716EAC4A75C5B30A1CE36AC1 /* Pods_Airplane.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Airplane.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C480B97EA252965F8553E87E /* Pods-Airplane.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Airplane.debug.xcconfig"; path = "Target Support Files/Pods-Airplane/Pods-Airplane.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -151,6 +153,7 @@
 				07B22617247B2DB0006FB68D /* Detail */,
 				0720630F247AC5C700B3DD7D /* Cell */,
 				07B22614247B192D006FB68D /* Navigation */,
+				07C3C2DA24847083000AAEFE /* Resources */,
 				07206314247AD77B00B3DD7D /* Utils */,
 				0799BAFB247979C900ED8B5A /* Main.storyboard */,
 				0799BAFE247979CA00ED8B5A /* Assets.xcassets */,
@@ -200,6 +203,14 @@
 				07B22619247B2DD7006FB68D /* DetailViewController.xib */,
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		07C3C2DA24847083000AAEFE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				07C3C2DB248470BB000AAEFE /* LottieAvion.json */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		121DC4F1875267A7C836F41C /* Frameworks */ = {
@@ -281,6 +292,7 @@
 			files = (
 				073A24A72482D46200A46F45 /* AddUserControl.xib in Resources */,
 				073002B02480305D001BCF45 /* ContactTableViewCell.xib in Resources */,
+				07C3C2DC248470BB000AAEFE /* LottieAvion.json in Resources */,
 				0799BB02247979CA00ED8B5A /* LaunchScreen.storyboard in Resources */,
 				07206313247AC5FD00B3DD7D /* HomeUserTableViewCell.xib in Resources */,
 				07C0383324815C31004BAAA1 /* UserTableViewCell.xib in Resources */,

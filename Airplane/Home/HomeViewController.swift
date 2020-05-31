@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Lottie
 
 let mNotificacionKey = "com.neburonipse.mNotificacionKey"
 
@@ -23,6 +24,8 @@ class HomeViewController: UIViewController {
     var userData : [UserResult] = []
     private var showAlert = false
     private var name : String?
+    
+    let starAnimationView = AnimationView(name: "LottieAvion")
     
     lazy var addUserControl : AddUserControl = {
         let control = AddUserControl.loadNibName()
@@ -50,12 +53,21 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        loadLottie()
+        
         title = "Airplane"
         configureTableView()
         self.presenter?.viewDidLoad()
         self.containerStackView.addArrangedSubview(addUserControl)
         
         NotificationCenter.default.addObserver(self, selector: #selector(HomeViewController.observerNotification(_ :)), name: Notification.Name(mNotificacionKey), object: name)
+    }
+    
+    func loadLottie() {
+        starAnimationView.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height)
+        self.view.addSubview(starAnimationView)
+        starAnimationView.play()
     }
     
     @objc func observerNotification(_ notification: Notification) {
@@ -87,6 +99,13 @@ extension HomeViewController : HomeView {
     func update(data: [UserResult]) {
         userData = data
         tableView.reloadData()
+        
+        starAnimationView.play { (finished) in
+          /// Animation finished
+            self.starAnimationView.isHidden = true
+            self.starAnimationView.stop()
+        }
+
         /*
         userData.forEach { (user) in
             if let userMail = user.email {
