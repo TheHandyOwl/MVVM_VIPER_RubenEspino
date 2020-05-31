@@ -16,6 +16,7 @@ class ContactTableViewCell: UITableViewCell {
     @IBOutlet weak var email: UILabel!
     
     static var estimatedHeight : CGFloat = 150.0
+    private var name = ""
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -39,11 +40,16 @@ class ContactTableViewCell: UITableViewCell {
     
     func configureCell(user: UserResult) {
         guard let phone = user.phone,
-            let email = user.email
+            let email = user.email,
+            let name = user.name?.first,
+            let surname = user.name?.last
             else { return }
         
         self.phone.text = "Phone: \(phone)"
         self.email.text = "\(email)"        
+        
+        self.name = "\(name) \(surname)"
+        
     }
     
 }
@@ -69,6 +75,9 @@ extension ContactTableViewCell {
             }
             
         }
+        
+        NotificationCenter.default.post(name: Notification.Name(mNotificacionKey), object: name)
+        
     }
     
 }

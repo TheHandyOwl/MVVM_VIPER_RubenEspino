@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HomeViewController.swift
 //  Airplane
 //
 //  Created by Carlos on 23/05/2020.
@@ -8,18 +8,22 @@
 
 import UIKit
 
+let mNotificacionKey = "com.neburonipse.mNotificacionKey"
+
 protocol HomeView : class {
     func update(data: [UserResult])
 }
 
 class HomeViewController: UIViewController {
-
+    
     @IBOutlet weak var containerStackView: UIStackView!
     @IBOutlet weak var tableView: UITableView!
     
     var presenter : HomePresenter?
     var userData : [UserResult] = []
-
+    private var showAlert = false
+    private var name : String?
+    
     lazy var addUserControl : AddUserControl = {
         let control = AddUserControl.loadNibName()
         control.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -50,8 +54,32 @@ class HomeViewController: UIViewController {
         configureTableView()
         self.presenter?.viewDidLoad()
         self.containerStackView.addArrangedSubview(addUserControl)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(HomeViewController.observerNotification(_ :)), name: Notification.Name(mNotificacionKey), object: name)
     }
-
+    
+    @objc func observerNotification(_ notification: Notification) {
+        print("Escuchada notificación desde HomeViewController")
+        
+        name = "\(notification.object ?? "Pasajero")"
+        showAlert = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        if showAlert {
+            let alert = UIAlertController(title: "Contactar", message: "Has contactado con el pasajero \(name!)", preferredStyle: .alert)
+            let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            alert.addAction(action)
+            present(alert, animated: true)
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        showAlert = false
+    }
+    
 }
 
 extension HomeViewController : HomeView {
@@ -103,5 +131,5 @@ extension HomeViewController : UITableViewDelegate {
         tableView.dataSource = self
         tableView.register(UINib(nibName: "HomeUserTableViewCell", bundle: nil), forCellReuseIdentifier: "HomeUserTableViewCell")
     }
-        
+    
 }
