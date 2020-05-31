@@ -6,5 +6,6 @@ target 'Airplane' do
 
   pod 'Alamofire', '~> 4.9.1'
   pod 'Kingfisher'
-
+  pod 'lottie-ios'
+  
 end
