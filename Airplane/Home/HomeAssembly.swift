@@ -10,6 +10,19 @@ import UIKit
 
 class HomeAssembly {
     
+    static func buildNavigation(usingNavigationFactory factory: NavigationFactory) -> UINavigationController {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let view = storyboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+        
+        let interactor = HomeInteractor()
+        let router = HomeRouter(view: view)
+        let presenter = HomePresenter(view: view, interactor: interactor, router: router)
+        view.presenter = presenter
+                
+        return factory(view)
+    }
+    
     static func build() -> UIViewController {
         
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)

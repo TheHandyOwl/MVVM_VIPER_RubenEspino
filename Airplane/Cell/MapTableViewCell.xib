@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MapTableViewCell" id="KGk-i7-Jjw" customClass="MapTableViewCell" customModule="Airplane" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="400"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="400"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nvk-dr-D5H">
+                        <rect key="frame" x="24" y="19" width="272" height="362"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="9Z2-BZ-I7S">
+                                <rect key="frame" x="0.0" y="0.0" width="272" height="362"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="9Z2-BZ-I7S" firstAttribute="top" secondItem="Nvk-dr-D5H" secondAttribute="top" id="Yay-Ya-imN"/>
+                            <constraint firstItem="9Z2-BZ-I7S" firstAttribute="leading" secondItem="Nvk-dr-D5H" secondAttribute="leading" id="Yxl-fE-4kw"/>
+                            <constraint firstItem="9Z2-BZ-I7S" firstAttribute="trailing" secondItem="Nvk-dr-D5H" secondAttribute="trailing" id="phL-Vx-tOB"/>
+                            <constraint firstItem="9Z2-BZ-I7S" firstAttribute="bottom" secondItem="Nvk-dr-D5H" secondAttribute="bottom" id="wgk-FQ-qLn"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Nvk-dr-D5H" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="8" id="Eoz-hM-rAb"/>
+                    <constraint firstItem="Nvk-dr-D5H" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" constant="-8" id="aMQ-hU-rjt"/>
+                    <constraint firstItem="Nvk-dr-D5H" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" constant="-8" id="oVb-Gg-9Ra"/>
+                    <constraint firstItem="Nvk-dr-D5H" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="8" id="vNU-3F-cJh"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="mView" destination="Nvk-dr-D5H" id="xEP-PS-lwH"/>
+                <outlet property="mapView" destination="9Z2-BZ-I7S" id="Nz8-ag-PkI"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="113"/>
+        </tableViewCell>
+    </objects>
+</document>
