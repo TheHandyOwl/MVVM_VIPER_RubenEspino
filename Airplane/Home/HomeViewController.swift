@@ -22,9 +22,24 @@ class HomeViewController: UIViewController {
 
     lazy var addUserControl : AddUserControl = {
         let control = AddUserControl.loadNibName()
+        control.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        control.backgroundColor = UIColor.systemGreen
+        control.layer.shadowColor = UIColor.gray.cgColor
+        control.layer.shadowOffset = CGSize.zero
+        control.layer.cornerRadius = 8.0
+        control.layer.shadowOpacity = 0.6
+        
         let viewModel = AddUserViewModel(title: "Nuevos pasajeros", stepValue: 0)
         control.configure(usingViewModel: viewModel) { (stepValue) in
             print("PASOS: \(stepValue)")
+            if stepValue > 0 {
+                self.presenter?.passengers(number: stepValue)
+                control.backgroundColor = UIColor.white
+            } else {
+                control.backgroundColor = UIColor.systemGreen
+                self.userData.removeAll()
+                self.tableView.reloadData()
+            }
         }
         return control
     }()
